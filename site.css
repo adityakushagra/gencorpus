@@ -541,3 +541,91 @@ footer h4{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.09e
 .megamark{font:400 clamp(80px,19vw,300px)/.8 var(--display);letter-spacing:-.05em;color:#ffffff12;white-space:nowrap;overflow:hidden;margin:36px 0 -0.08em;user-select:none}
 .megamark i{color:#ff5c7026}
 @media(max-width:600px){.hstats>div{padding-right:14px;margin-right:14px}.hstats b{font-size:34px}.hero h1{font-size:46px}.dnum{font-size:72px}.sh{margin-bottom:24px}}
+/* =========================================================
+   v5 responsive pass: phone, tablet, laptop, large screens
+   ========================================================= */
+/* hero stats: wrap cleanly at every width */
+.hstats{display:flex;flex-wrap:wrap;gap:16px 0}
+.hstats>div{white-space:normal;flex:0 0 auto;min-width:0}
+/* binder: size from the column, button sits below, never on top */
+.stage3d{height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding-block:24px}
+.binder{width:min(340px,100%)}
+.opener{position:static;transform:none}
+/* header on small phones */
+.mark{padding-block:7px}
+@media(max-width:420px){.top .wrap{gap:8px}.tools-r{gap:6px}.ibtn{padding:8px 10px}.ibtn kbd{display:none}.mark{font-size:26px}.mark sup{display:none}}
+/* tap targets */
+.chip[data-jump]{min-height:40px;display:inline-flex;align-items:center;padding:6px 14px}
+.scrub input{height:40px}
+.leaf a{min-height:28px;align-items:center}
+/* tablet: 600 to 1100 */
+@media(max-width:1100px) and (min-width:901px){
+ .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+ .binder{width:min(300px,100%)}
+ .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .doc{grid-template-columns:minmax(0,1fr) minmax(0,300px)}
+ .split{grid-template-columns:minmax(0,240px) minmax(0,1fr)}
+ .roomgrid{grid-template-columns:minmax(0,190px) minmax(0,1.2fr) minmax(0,1fr)}
+ .dnum{font-size:80px}
+}
+@media(max-width:900px){
+ .hero .wrap{gap:8px;padding-block:44px 32px}
+ .stage3d{padding-block:8px 0}
+ .binder{width:min(300px,78vw)}
+ .grid2{gap:28px}
+ .dcard{gap:16px}
+ .rcard{gap:10px}
+}
+@media(min-width:601px) and (max-width:900px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3>:last-child:nth-child(odd){grid-column:1/-1}}
+/* phone: scale the binder's inside so nothing spills */
+@media(max-width:600px){
+ .binder{width:min(240px,64vw)}
+ .binder>.cover{padding:20px 18px}
+ .cover h4{font-size:26px;margin:10px 0 6px}
+ .cover p{font-size:12.5px;line-height:1.4}
+ .cover .rule{margin:10px 0}
+ .cover p:last-of-type{font-size:11px!important;line-height:1.6!important}
+ .cover .stamp{font-size:11px;padding:3px 8px}
+ .binder>.leaf{padding:16px 14px}
+ .leaf a{font-size:15px;padding:3px 0}
+ .binder>.tabs3d{right:-24px;width:26px}
+ .hstats>div{padding:14px 14px 0 0;margin-right:14px}
+ .hstats b{font-size:32px}
+ .sh h2{font-size:34px}
+ .ph h1{font-size:44px}
+ .card{padding:20px}
+ .clause{padding:20px 16px}
+ .tool>header,.inputs,.out{padding:16px}
+ .dcard{padding:18px}
+ .reader p{font-size:17.5px}
+ .reader h1{font-size:40px}
+ .page h2,#dealOut h2,#clauseOut h2{font-size:34px}
+ .dnum{font-size:64px}
+ .ring{width:84px;height:84px}
+ .feed li:nth-child(n+4){display:none}
+ .megamark{font-size:24vw}
+}
+@media(max-width:360px){.hero h1{font-size:40px}.btn{padding:0 14px;font-size:14px}}
+/* large screens: use the room */
+@media(min-width:1700px){
+ .wrap{max-width:1440px}
+ body{font-size:17.5px}
+ .hero .wrap{min-height:min(82svh,900px)}
+ .binder{width:380px}
+ .reader{max-width:760px}
+}
+@media(min-width:2200px){.wrap{max-width:1640px}body{font-size:18.5px}.binder{width:420px}}
+/* short laptop screens: keep the hero inside the fold */
+@media(min-width:901px) and (max-height:800px){.hero .wrap{min-height:0;padding-block:40px}.hero h1{font-size:clamp(44px,5.6vw,80px)}.binder{width:min(290px,100%)}.hstats{margin-top:26px}}
+/* landscape phones */
+@media(max-height:500px) and (orientation:landscape){.hero .wrap{min-height:0}.stage3d{display:none}.top{position:relative}}
+/* touch devices: no hover-only effects */
+@media(hover:none){.card::before{display:none}.binder>.tabs3d a:hover{transform:none}}
+.hstats>div{padding:14px 18px 0 0;margin-right:18px}
+.hstats b{font-size:clamp(32px,3.2vw,44px)}
+@media(min-width:901px){.hstats{flex-wrap:nowrap}}
+.binder>.leaf{overflow:hidden;visibility:hidden;transition:visibility 0s .9s}
+.binder.open>.leaf{visibility:visible;transition:none}
+@media(min-width:901px){.hstats{flex-wrap:wrap}}
+@media(min-width:1200px){.hstats{flex-wrap:nowrap}}
+@media(max-width:600px){.hstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 0}.hstats>div{border-right:0;margin-right:0;padding-right:8px}}
